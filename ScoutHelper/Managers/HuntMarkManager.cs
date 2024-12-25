@@ -130,32 +130,4 @@ public class HuntMarkManager : IDisposable {
 		_framework.Update -= Tick;
 	}
 
-	/*
-	private void OnMarkSeen(TrainMob mark) {
-		if (!_turtleManager.IsTurtleCollabbing) return;
-
-		_turtleManager.UpdateCurrentSession(mark.AsSingletonList())
-			.ContinueWith(
-				task => {
-					switch (task.Result) {
-						case TurtleHttpStatus.Success:
-							_chat.TaggedPrint($"added {mark.Name} to the turtle session.");
-							break;
-						case TurtleHttpStatus.NoSupportedMobs:
-							_chat.TaggedPrint($"{mark.Name} was seen, but is not supported by turtle and will not be added to the session.");
-							break;
-						case TurtleHttpStatus.HttpError:
-							_chat.TaggedPrintError($"something went wrong when adding {mark.Name} to the turtle session ;-;.");
-							break;
-					}
-				},
-				TaskContinuationOptions.OnlyOnRanToCompletion
-			)
-			.ContinueWith(
-				task => _log.Error(task.Exception, "failed to update turtle session"),
-				TaskContinuationOptions.OnlyOnFaulted
-			);
-	}
-	*/
-
 }
